@@ -8,10 +8,10 @@ res.status(200).json(datos)
 
 const getOneUser = (req,res) =>{
     const oneUser = datos.find(el => el.id === Number(req.params.id))
-
     if(!oneUser){
         return res.status(404).json({message:"User not found"})
     }
+    
     res.json(oneUser)
 }
 
