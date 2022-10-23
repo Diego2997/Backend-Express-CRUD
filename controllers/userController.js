@@ -2,12 +2,17 @@ let datos = require('../datos')
 
 
 const getUser = (req,res) =>{
-    console.log(req.query)
+
     const queryUser = datos.find(el => el.nombre === req.query.nombre)
-    if(queryUser){
-        return res.status(200).send(queryUser)
+    if(!queryUser){
+       return res.status(404).json({message:"User not found"})
     }
+    if(queryUser){
+        return res.status(200).json(queryUser)
+    }
+
     res.status(200).json(datos)
+
 }
 
 
