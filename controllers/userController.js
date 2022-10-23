@@ -1,18 +1,16 @@
 let datos = require('../datos')
 
 
-const getUser = (req,res) =>{
-
+const getUsers = (req,res) =>{
     const queryUser = datos.find(el => el.nombre === req.query.nombre)
-    if(!queryUser){
-       return res.status(404).json({message:"User not found"})
-    }
+    console.log(queryUser)
     if(queryUser){
         return res.status(200).json(queryUser)
     }
-
+     if(!queryUser){
+        return res.status(404).json({message:"User not found"})
+     }
     res.status(200).json(datos)
-
 }
 
 
@@ -27,6 +25,9 @@ const getOneUser = (req,res) =>{
     
     res.json(oneUser)
 }
+
+
+
 
 const createUser = (req,res) =>{
     const data = req.body
@@ -74,7 +75,7 @@ const deleteUser = (req,res) =>{
 }
 
 module.exports = {
-    getUser,
+    getUsers,
     getOneUser,
     createUser,
     updateUser,
