@@ -2,7 +2,7 @@ const express = require('express')
 const dotenv = require('dotenv')
 const morgan = require('morgan')
 const routes = require('./routes')
-const fibo = require('./middlewares')
+// const fibo = require('./middlewares')
 const app = express()
 
 
@@ -18,7 +18,7 @@ app.use(express.urlencoded({extended:true}))
 
 // ROUTE
 app.use('/crud', routes)
-app.get('/',fibo)
+// app.get('/',fibo)
 
 // SERVER
 app.listen(process.env.PORT, () =>{
