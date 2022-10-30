@@ -94,7 +94,8 @@
     "vary": "^1.1.2"
   },
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "lint": "eslint . --fix"
   },
   "repository": {
     "type": "git",
@@ -108,6 +109,10 @@
   },
   "homepage": "https://github.com/Diego2997/Tarea-Backend#readme",
   "devDependencies": {
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.3.0",
+    "eslint-plugin-promise": "^6.1.1",
     "nodemon": "^2.0.20"
   }
 }

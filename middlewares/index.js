@@ -1,3 +1,3 @@
- const fibonnacci = require('./fibo')
+const fibonnacci = require('./fibo')
 
- module.exports = fibonnacci
+module.exports = fibonnacci
