@@ -1,3 +1,7 @@
-const userController = require('./userController')
+const userController = require("./userController");
+const fiboController = require("./fiboController");
 
-module.exports = userController
+module.exports = {
+  userController,
+  fiboController,
+};

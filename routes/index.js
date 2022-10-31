@@ -1,14 +1,13 @@
-const express = require('express')
+const express = require("express");
 
-const crud = express.Router()
-const userController = require('../controllers')
+const api = express.Router();
+const { userController, fiboController } = require("../controllers");
 
+api.get("/users", userController.getUsers);
+// api.get("/users/:id", userController.getOneUser);
+api.post("/users", userController.createUser);
+api.put("/users/:id", userController.updateUser);
+api.delete("/users/:id", userController.deleteUser);
 
-crud.get('/users', userController.getUsers)
-crud.get('/users/:id', userController.getOneUser)
-crud.post('/users', userController.createUser)
-crud.put('/users/:id',userController.updateUser)
-crud.delete('/users/:id' , userController.deleteUser)
-
-
-module.exports = crud
+api.get("/fibo", fiboController.fibonnacci);
+module.exports = api;
